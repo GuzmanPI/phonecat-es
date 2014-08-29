@@ -16,13 +16,17 @@
       <!--Sidebar content-->
 
       Búsqueda: <input ng-model="query">
-
+      Ordenar por:
+      <select ng-model="ordenProp">
+        <option value="name">Alfabética</option>
+        <option value="age">El más nuevo</option>
+      </select>
     </div>
     <div class="col-md-10">
       <!--Body content-->
 
       <ul class="phones">
-        <li ng-repeat="telefono in telefonos | filter:query">
+        <li ng-repeat="telefono in telefonos | filter:query | orderBy:ordenProp">
           {{telefono.name}}
           <p>{{telefono.snippet}}</p>
         </li>

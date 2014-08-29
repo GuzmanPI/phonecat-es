@@ -76,7 +76,7 @@ Para ver los cambios entre dos lecciones cualquiera usa el comando git diff.
 
 ### paso-4
 
-- Agrega la propiedad `edad` a cada teléfono en el modelo de datos.
+- Agrega la propiedad `age` a cada teléfono en el modelo de datos.
 - Agrega una combo `<select>` para cambiar el orden de la lista de teléfonos.
 - Sobreescribe el valor del orden por defecto en el controlador.
 - Agrega pruebas unitarias y e2e tests para esta funcionalidad.
