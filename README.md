@@ -1,4 +1,4 @@
-# AngularJS Phone Catalog Tutorial Application
+# AngularJS Tutorial de Aplicación Catálogo de Teléfonos (Phonecat)
 
 ## Overview
 
@@ -47,205 +47,202 @@ Para ver los cambios entre dos lecciones cualquiera usa el comando git diff.
 
 ### paso-1
 
-- Add static html list with two phones into index.html. We will convert this static page into
-  dynamic one with the help of angular.
+- Agrega una lista html estática con dos teléfonos en index.html. Convertiremos esta página estática en
+  una dinámica con alluda deangular.
 
 
 ### paso-2
 
-- Convert the static html list into dynamic one by:
-  - creating `PhoneListCtrl` controller for the application
-  - extracting the data from HTML, moving it into the controller as an in-memory dataset.
-  - converting the static HTML document into an Angular template with the use of the `ngRepeat`
-    directive which iterates over the dataset of phones.
-    `ngRepeat` clones its contents for each instance in the dataset and renders it into the view.
-- Add a simple unit test to show off how to write tests and run them with Karma
+- Convierte la lista html estática en una dinámica al:
+  - crear controlador `ListaTelefonosCtrl` para la aplicación
+  - extraer los datos del HTML y moverlos dentro del controlador como en un set de datos en-memoria.
+  - convertir el documento HTML estático en una plantilla de Angular con el uso de la directiva `ngRepeat`
+    la cual itera el set de datos de teléfonos.
+    `ngRepeat` clona su contenido por cada instancia in el set de datos y  and y los representa en la vista.
+- Agrega una prueba unitaria simple para exhibir como escribir tests y correrlos con Karma
 
 
 ### paso-3
 
 
-- Add a search box to demonstrate how:
-  - the data-binding works on input fields.
-  - to use the `filter` filter.
-  - `ngRepeat` automatically shrinks and grows the number of phones in the view.
-- Add an end-to-end test to:
-  - show how end-to-end tests are written and how to run them with Protractor.
-  - prove that the search box and the repeater are correctly wired together.
+- Agrega una caja de búsqueda para demostrar como:
+  - el enlace de datos (data-binding) funciona en cajas de texto.
+  - usar el filtro `filter`.
+  - `ngRepeat` automáticamente encoge y crece el número de teléfonos en la vista.
+- Y una prueba de end-to-end para:
+  - mostrar como se escriben las pruebas de end-to-end y como correrlas con Protractor.
+  - provear que la caja de búsqueda y el repetidor están conectados entre si correctamente.
 
 
 ### paso-4
 
-- Add `age` property to each phone in the data model.
-- Add a `<select>` input to change the phone list order.
-- Override the default order value in the controller.
-- Add unit and e2e tests for this feature.
+- Agrega la propiedad `edad` a cada teléfono en el modelo de datos.
+- Agrega una combo `<select>` para cambiar el orden de la lista de teléfonos.
+- Sobreescribe el valor del orden por defecto en el controlador.
+- Agrega pruebas unitarias y e2e tests para esta funcionalidad.
 
 ### paso-5
 
-- Replace the in-memory dataset with data loaded from the server (in
-  the form of static `phones.json` file).
-  - The `phones.json` file is loaded using the `$http` service.
-- Demonstrate the use of [services][service] and [dependency injection][DI].
-  - The [$http] service is injected into the controller through [dependency injection][DI].
+- Reemplaza los datos en memoria por datos cargados desde el servidor (en 
+  forma de archivo estático `phones.json`).
+  - El archivo `phones.json` se carga utilizando el servicio `$http`.
+- Demuestra el uso de [servicios][service] e [inyección de dependencias][DI].
+  - El servicio [$http] se inyecta en el controlador a través la [inyección de dependencias][DI].
 
 
 ### paso-6
 
-- Add phone images and links to new pages that show the phone details.
-- Add end2end tests that verify the links to the detail pages.
-- Add CSS to style the page just a notch.
+- Agrega imágenes de teléfono y links a nuevas páginas que muestran el detalle del teléfono.
+- Agrega pruebas de end2end que verifican que los links a las páginas del detalle.
+- Agrega CSS solo un poco de estilo a la página.
 
 
 ### paso-7
 
-- Introduce the [$route] service which allows binding URLs for deep-linking with
-  views:
-  - Create `PhoneCatCtrl` which governs the entire app and contains $route configuration.
-  - Install `angular-route` using bower and load the `ngRoute` module.
-    (Be sure to run npm install again.)
-  - Copy route parameters to root scope `params` property for access in sub controllers.
-  - Replace the contents of `index.html` with the `ngView` directive, which will display the partial
-    template of the current route.
+- Introduce el servicio [$route] el cual permite enlazar URLs para un deep-linking con las
+  vistas:
+  - Crea `PhoneCatCtrl` el cual govierna la aplicación entera y contiene la configuración de $route.
+  - Instala `angular-route` usando bower y carga el módulo `ngRoute`.
+    (Asegúrate de correr npm install otra vez.)
+  - Copia los parámetros de ruta a la propiedad `params` en el scope raiz para accesarlo en sub controladores.
+  - Reemplaza el contenido de `index.html` por la directiva `ngView`, la cual desplegará la plantilla parcial
+    template de la ruta actual.
 
-- Create phone list route:
-  - Map `/phones` route to `PhoneListCtrl` and `partails/phones-list.html`.
-  - Preserve existing `PhoneListCtrl` controller.
-  - Move existing html from `index.html` to `partials/phone-list.html`.
-- Create phone details route:
-  - Map `/phones/<phone-id>` route to `PhoneDetailCtrl` and `partails/phones-detail.html`.
-  - Create empty placeholder `PhoneDetailsCtrl` controller.
+- Crea la ruta de lista de teléfonos:
+  - Mapea la ruta`/telefonos` a `ListaTelefonosCtrl` y `partails/lista-telefonos.html`.
+  - Preserva el controlador existente `ListaTelefonosCtrl`.
+  - Mueve html existente de `index.html` a `partials/lista-telefonos.html`.
+- Crea la ruta del detalle de teléfono:
+  - Mapea la ruta `/telefonos/<id-telefono>` a `DetalleTelefonoCtrl` y `partails/detalle-telefono.html`.
+  - Crea un controlador vacio `DetallesTelefonoCtrl`.
 
 
 ### paso-8
 
-
-- Implement `PhoneDetailCtrl` controller to fetch the details for a specific phone from a JSON file
-  using `$http` service.
-- Update the template for the phone detailed view.
-- Add CSS to make the phone details page look "pretty".
+- Implementa el controlador `DetalleTelefonoCtrl` para traer los detalles de un teléfono específico de un archivo JSON 
+  utilizando el servicio `$http`.
+- Actualiza la plantilla de la vista del detalle de un teléfono.
+- Agrega CSS para hacer que la vista de los detalles de un teléfono se vea "bonita".
 
 
 ### paso-9
 
-- Add custom `checkmark` filter.
-- Update phone detail template to use `checkmark` filter.
-- Add unit test for the filter.
+- Agrega un filtro personalizado `checkmark`.
+- Actualiza la plantilla del detalle del teléfono para utilizar el filtro `checkmark`.
+- Agrega prueba unitaria para el filtro.
 
 ### paso-10
 
-In the phone detail view, clicking on a thumbnail image, changes the main phone image to be the
-large version of the thumbnail image.
+En la vista del detalle de teléfono, al darle click a una imagen miniatura, cambia la imagen principal por una imagen 
+más grande la imagen mineatura.
 
-- Define `mainImageUrl` model variable in the `PhoneDetailCtrl` and set its default value.
-- Create `setImage()` controller method to change `mainImageUrl`.
-- Register an expression with the `ngClick` directive on thumb images to set the main image, using
-  `setImage()`.
-- Add e2e tests for this feature.
-- Add CSS to change the mouse cursor when user points at thumnail images.
+- Define el modelo variable `urlImagenPrincipal` en `DetalleTelefonoCtrl` y setea su valor por defecto.
+- Crea el método de controlador `setImagen()` para cambiar `urlImagenPrincipal`.
+- Registra una exprecion con la directiva `ngClick` en las imágenes mineatura para setear la imagen principal, usando
+  `setImagen()`.
+- Agrega pruebas de e2e para es funcionalidad.
+- Agrega CSS para cambiar el cursor del mouse cuando el usuari apunta a una imagen miniatura.
 
 
 ### paso-11
 
-- Replace [$http] with [$resource].
-- Created a custom `Phone` service that represents the `$resource` client.
+- Reemplaza [$http] por [$resource].
+- Crea un servicio personalizado `Telefono` que representa el cliente `$resource`.
 
 
 ### paso-12
 
-- Add animations to the application:
-  - Animate changes to the phone list, adding, removing and reordering phones.
-  - Animate changes to the main phone image in the detail view.
+- Agrega animaciones a la aplicación:
+  - Anima cambios a la lista de teléfonos, agregando, removiendo y reordenando teléfonos.
+  - Anima cambios a la imagen principal en la vista del detalle de teléfono.
 
 
-## Development with angular-phonecat
+## Desarrollo con angular-phonecat
 
-The following docs describe how you can test and develop further this application.
+La siguiente doc describe como puedes probar y desarrollar esta aplicación.
 
 
-### Installing dependencies
+### Instalar dependencias
 
-The application relies upon various node.js tools, such as Bower, Karma and Protractor.  You can
-install these by running:
+La aplicación depende de varias herramientas de node.js, tales como Bower, Karma y Protractor. Puedes 
+instalarlas corriendo:
 
 ```
 npm install
 ```
 
-This will also run bower, which will download the angular files needed for the current paso of the
+Esto también correrá bower, el cual descargará los archivos de angular necesarios para el paso actual del
 tutorial.
 
-Most of the scripts described below will run this automatically but it doesn't do any harm to run
-it whenever you like.
+La mayoría de los scripts descritos a continuación will correrán esto automáticamente pero no hace ningún daño correrlos
+Cuando gustes.
 
-### Running the app during development
+### Correr la aplicación durante desarrollo
 
-- Run `npm start`
-- navigate your browser to `http://localhost:8000/app/index.html` to see the app running in your browser.
+- Corre `npm start`
+- navega tu browser a `http://localhost:8000/app/index.html` para ver la ap corriendo en tu navegador.
 
-### Running unit tests
+### Correr pruebas unitarias
 
-We recommend using [Jasmine][jasmine] and [Karma][karma] for your unit tests/specs, but you are free
-to use whatever works for you.
+Te recomendamos usar [Jasmine][jasmine] y [Karma][karma] para tus pruebas/specs unitarias, pero eres libre
+de usar lo que funcione para ti.
 
-- Start Karma with `npm test`
-  - A browser will start and connect to the Karma server. Chrome is the default browser, others can
-  be captured by loading the same url as the one in Chrome or by changing the `test/karma.conf.js`
-  file.
-- Karma will sit and watch your application and test JavaScript files. To run or re-run tests just
-  change any of your these files.
+- Inicia Karma con `npm test`
+  - Un navegador se iniciará y conectará al servidor de Karma. Chrome is navegador por defecto, otros pueden 
+  ser capturados cargando la misma url de Chrome o cambiando el archivo `test/karma.conf.js`.
+- Karma se sentará y observará tu aplicación y los archivos JavaScript de pruebas. Para correr o reiniciar las pruebas 
+  solo cambia cualquiera de tus archivos.
 
 
-### End to end testing
+### Pruebas de end to end
 
-We recommend using [Jasmine][jasmine] and [Protractor][protractor] for end-to-end testing.
+Te recomendamos usar [Jasmine][jasmine] y [Protractor][protractor] para pruebas de end-to-end.
 
-Requires a webserver that serves the application. See Running the app during development, above.
+Require un servidor web que sirva la aplicación. Vee Correr la aplicación durante desarrollo, arriba.
 
-- Serve the application: run `npm start`.
-- In a separate console run the end2end tests: `npm run protractor`. Protractor will execute the
-  end2end test scripts against the web application itself.
-  - The configuration is set up to run the tests on Chrome directly. If you want to run against
-    other browsers then you must install the webDriver, `npm run update-webdriver`, and modify the
-  configuration at `test/protractor-conf.js`.
+- Servidor de aplicación: corre `npm start`.
+- En una consola a parte corre las pruebas de end2end: `npm run protractor`. Protractor ejecutará los scripts de  
+  pruebas de end2end conta la aplicación web misma.
+  - La configuración está diseñada ára correr las pruebas directamente en Chrome. Si quieres correrlas contra 
+    otro navegador entonces tienes que instalar el webDriver, `npm run update-webdriver`, y modificar 
+   la configuración en `test/protractor-conf.js`.
 
-## Application Directory Layout
+## Layout del Directoryo de la Aplicación
 
-    app/                --> all of the files to be used in production
-      css/              --> css files
-        app.css         --> default stylesheet
-      img/              --> image files
-      index.html        --> app layout file (the main html template file of the app)
-      js/               --> javascript files
-        ap.js          --> the main application module
-        controladores.js  --> application controlladores de la aplicación
-        directivas.js   --> application directives
-        filtros.js      --> custom angular filters
-        servicios.js     --> custom angular services
-        animations.js   --> hooks for running JQuery animations with ngAnimate
-      partials/         --> angular view partials (partial html templates) used by ngRoute
+    app/                  --> todos los archivos que serán usados en producción
+      css/                --> archivos css
+        app.css           --> hoja de estilo por defecto
+      img/                --> archivos de imágenes
+      index.html          --> archivo layout de la ap (la plantilla html principal de la ap)
+      js/                 --> archivos javascript
+        ap.js             --> módulo principal de la aplicación
+        controladores.js  --> controlladores de la aplicación
+        directivas.js     --> directivas de la aplicación
+        filtros.js        --> filtros de la aplicación
+        servicios.js      --> services personalizados de la aplicación
+        animations.js     --> ganchos para correr animaciones de JQuery con ngAnimate
+      partials/           --> vistas parciales de angular (plantillas html parciales) utilizadas por ngRoute
         partial1.html
         partial2.html
-      bower_components  --> 3rd party js libraries, including angular and jquery
+      bower_components  --> librerías js, incluyendo angular y jquery
 
-    scripts/            --> handy scripts
-      update-repo.sh       --> pull down the latest version of this repos
-                               (BE CAREFUL THIS DELETES ALL CHANGES YOU HAVE MADE)
-      private/             --> private scripts used by the Angular Team to maintain this repo
-    test/               --> test source files and libraries
-      karma.conf.js        --> config file for running unit tests with Karma
-      protractor-conf.js   --> config file for running e2e tests with Protractor
+    scripts/            --> scripts prácticos
+      update-repo.sh       --> descarga la última versión de este repo
+                               (TEN CUIDADO ESTO ELIMINARA TODOS LOS CAMBIOS QUE HAYAS HECHO)
+    test/               --> archivos fuentes de las pruebas y librerías
+      karma.conf.js        --> archivo de configuración para correr las pruebas unitarias con Karma
+      protractor-conf.js   --> archivo de configuración para correr las pruebas de e2e con Protractor
       e2e/
         scenarios.js       --> end-to-end specs
-      unit/             --> unit level specs/tests
-        controladorsSpec.js --> specs for controllers
-        directivasSpec.js  --> specs for directives
-        filtrosSpec.js     --> specs for filters
-        serviciosSpec.js    --> specs for services
+      unit/             --> specs/pruebas por nivel de unidad 
+        controladoresSpec.js --> specs para controladores
+        directivasSpec.js  --> specs para directivas
+        filtrosSpec.js     --> specs para filtros
+        serviciosSpec.js    --> specs para servicios
 
-## Contact
+## Contacto
 
-For more information on AngularJS please check out http://angularjs.org/
+Para más información acerca de AngularJS por favor visite http://angularjs.org/
 
 [7 Zip]: http://www.7-zip.org/
 [angular-seed]: https://github.com/angular/angular-seed
