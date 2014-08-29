@@ -1,28 +1,21 @@
 <!doctype html>
-<html lang="es" ng-app>
+<html lang="es" ng-app="phonecatAp">
 <head>
   <meta charset="utf-8">
   <title>Mi Archivo HTML</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/app.css">
   <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controladores.js"></script>
 </head>
-<body>
+<body ng-controller="ListaTelefonosCtrl">
 
-  <ul>
-    <li>
-      <span>Nexus S</span>
-      <p>
-        Rápido ahora es más rápido con Nexus S.
-      </p>
-    </li>
-    <li>
-      <span>Motorola XOOM™ con Wi-Fi</span>
-      <p>
-        La Siguiente, Siguiente Generación de tableta.
-      </p>
-    </li>
-  </ul>
+<ul>
+  <li ng-repeat="telefono in telefonos">
+    {{telefono.name}}
+    <p>{{telefono.snippet}}</p>
+  </li>
+</ul>
 
 </body>
 </html>

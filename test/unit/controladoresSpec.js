@@ -4,8 +4,13 @@
 
 describe('controllers', function() {
 
-  it("should do something", function() {
+  beforeEach(module('phonecatAp'));
 
-  });
+  it('debe crear el modelo "telefonos" con 3 teléfonos', inject(function($controller) {
+    var scope = {},
+      ctrl = $controller('ListaTelefonosCtrl', {$scope:scope});
+
+    expect(scope.telefonos.length).toBe(3);
+  }));
 
 });
