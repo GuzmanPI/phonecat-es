@@ -2,7 +2,7 @@
 <html lang="es" ng-app="phonecatAp">
 <head>
   <meta charset="utf-8">
-  <title>Mi Archivo HTML</title>
+  <title>Galeria de Telefonos Google</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/app.css">
   <script src="bower_components/angular/angular.js"></script>
@@ -10,12 +10,27 @@
 </head>
 <body ng-controller="ListaTelefonosCtrl">
 
-<ul>
-  <li ng-repeat="telefono in telefonos">
-    {{telefono.name}}
-    <p>{{telefono.snippet}}</p>
-  </li>
-</ul>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+      Búsqueda: <input ng-model="query">
+
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul class="phones">
+        <li ng-repeat="telefono in telefonos | filter:query">
+          {{telefono.name}}
+          <p>{{telefono.snippet}}</p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
