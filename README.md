@@ -1,6 +1,6 @@
 # AngularJS Tutorial de Aplicación Catálogo de Teléfonos (Phonecat)
 
-## Overview
+## Información general
 
 Esta aplicación lleva al desarrollador a través del proceso de construir una aplicación-web utilizando
 angular. La aplicación está inspirada en **Google Phone Gallery**, la cual ya no 
@@ -48,7 +48,7 @@ Para ver los cambios entre dos lecciones cualquiera usa el comando git diff.
 ### paso-1
 
 - Agrega una lista html estática con dos teléfonos en index.html. Convertiremos esta página estática en
-  una dinámica con alluda deangular.
+  una dinámica con alluda de angular.
 
 
 ### paso-2
