@@ -13,14 +13,14 @@ describe('mi ap', function() {
     var listaTelefonos = element.all(by.repeater('telefono in telefonos'));
     var query = element(by.model('query'));
 
-    expect(listaTelefonos.count()).toBe(3);
+    expect(listaTelefonos.count()).toBe(20);
 
     query.sendKeys('nexus');
     expect(listaTelefonos.count()).toBe(1);
 
     query.clear();
     query.sendKeys('motorola');
-    expect(listaTelefonos.count()).toBe(2);
+    expect(listaTelefonos.count()).toBe(8);
   });
 
   it('Debe ser posible controlar el orden de los teléfonos via el combo box', function() {
