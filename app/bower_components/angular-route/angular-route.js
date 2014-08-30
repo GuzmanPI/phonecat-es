@@ -713,7 +713,7 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
         </div>
       </file>
 
-      <file name="animations.css">
+      <file name="animaciones.css">
         .view-animate-container {
           position:relative;
           height:100px!important;

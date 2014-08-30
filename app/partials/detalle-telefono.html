@@ -1,4 +1,9 @@
-<img ng-src="{{urlImagenPrincipal}}" class="phone">
+<div class="phone-images">
+  <img ng-src="{{img}}"
+       class="phone"
+       ng-repeat="img in telefono.images"
+       ng-class="{active: urlImagenPrincipal==img}">
+</div>
 
 <h1>{{telefono.name}}</h1>
 
@@ -9,7 +14,6 @@
     <img ng-src="{{img}}" ng-click="setImagen(img)">
   </li>
 </ul>
-
 
 <ul class="specs">
   <li>
