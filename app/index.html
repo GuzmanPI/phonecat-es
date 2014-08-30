@@ -26,8 +26,9 @@
       <!--Body content-->
 
       <ul class="phones">
-        <li ng-repeat="telefono in telefonos | filter:query | orderBy:ordenProp">
-          {{telefono.name}}
+        <li ng-repeat="telefono in telefonos | filter:query | orderBy:ordenProp" class="thumbnail">
+          <a href="#/telefonos/{{telefono.id}}" class="thumb"><img ng-src="{{telefono.imageUrl}}"></a>
+          <a href="#/telefonos/{{telefono.id}}">{{telefono.name}}</a>
           <p>{{telefono.snippet}}</p>
         </li>
       </ul>

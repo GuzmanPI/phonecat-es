@@ -48,4 +48,13 @@ describe('mi ap', function() {
       "The Next, Next Generation tablet with Wi-Fi."
     ]);
   });
+
+  it('debe mostrar los links de teléfonos específicos', function() {
+    var query = element(by.model('query'));
+    query.sendKeys('nexus');
+    element(by.css('.phones li a')).click();
+    browser.getLocationAbsUrl().then(function(url) {
+      expect(url.split('#')[1]).toBe('/telefonos/nexus-s');
+    });
+  });
 });
