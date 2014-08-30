@@ -17,5 +17,10 @@ phonecatControladores.controller('DetallesTelefonoCtrl', ['$scope', '$routeParam
   function($scope, $routeParams, $http) {
     $http.get('phones/' + $routeParams.idTelefono + '.json').success(function(data) {
       $scope.telefono = data;
+      $scope.urlImagenPrincipal = data.images[0];
     });
+
+    $scope.setImagen = function(urlImagen) {
+      $scope.urlImagenPrincipal = urlImagen;
+    }
   }]);

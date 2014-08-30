@@ -30,11 +30,18 @@ describe('controllers', function() {
   });
 
   describe('DetallesTelefonoCtrl', function(){
-    var scope, $httpBackend, ctrl;
+    var scope, $httpBackend, ctrl,
+      datosTelefonoXyz = function() {
+        return {
+          name: 'telefono xyz',
+          images: ['image/url1.png', 'image/url2.png']
+        }
+      };
+
 
     beforeEach(inject(function(_$httpBackend_, $rootScope, $routeParams, $controller) {
       $httpBackend = _$httpBackend_;
-      $httpBackend.expectGET('phones/xyz.json').respond({name:'telefono xyz'});
+      $httpBackend.expectGET('phones/xyz.json').respond(datosTelefonoXyz());
 
       $routeParams.idTelefono = 'xyz';
       scope = $rootScope.$new();
@@ -42,11 +49,11 @@ describe('controllers', function() {
     }));
 
 
-    it('debe obtener el detalle de un teléfono', function() {
+    it('should fetch phone detail', function() {
       expect(scope.telefono).toBeUndefined();
       $httpBackend.flush();
 
-      expect(scope.telefono).toEqual({name:'telefono xyz'});
+      expect(scope.telefono).toEqual(datosTelefonoXyz());
     });
   });
 
