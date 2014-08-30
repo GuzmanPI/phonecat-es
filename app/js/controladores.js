@@ -2,14 +2,18 @@
 
 /* Controladores */
 
-var phonecatAp = angular.module('phonecatAp', []);
+var phonecatControladores = angular.module('phonecatControladores', []);
 
-phonecatAp.controller('ListaTelefonosCtrl', function($scope, $http) {
-  $http.get('phones/phones.json').success(function(data) {
-    $scope.telefonos = data;
-  });
+phonecatControladores.controller('ListaTelefonosCtrl', ['$scope', '$http',
+  function($scope, $http) {
+    $http.get('phones/phones.json').success(function(data) {
+      $scope.telefonos = data;
+    });
 
+    $scope.ordenProp = 'age';
+  }]);
 
-  $scope.ordenProp = 'age';
-
-});
+phonecatControladores.controller('DetallesTelefonoCtrl', ['$scope', '$routeParams',
+  function($scope, $routeParams) {
+    $scope.idTelefono = $routeParams.idTelefono;
+  }]);
