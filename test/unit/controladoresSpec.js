@@ -29,4 +29,26 @@ describe('controllers', function() {
     expect(scope.ordenProp).toBe('age');
   });
 
+  describe('DetallesTelefonoCtrl', function(){
+    var scope, $httpBackend, ctrl;
+
+    beforeEach(inject(function(_$httpBackend_, $rootScope, $routeParams, $controller) {
+      $httpBackend = _$httpBackend_;
+      $httpBackend.expectGET('phones/xyz.json').respond({name:'telefono xyz'});
+
+      $routeParams.idTelefono = 'xyz';
+      scope = $rootScope.$new();
+      ctrl = $controller('DetallesTelefonoCtrl', {$scope: scope});
+    }));
+
+
+    it('debe obtener el detalle de un teléfono', function() {
+      expect(scope.telefono).toBeUndefined();
+      $httpBackend.flush();
+
+      expect(scope.telefono).toEqual({name:'telefono xyz'});
+    });
+  });
+
+
 });

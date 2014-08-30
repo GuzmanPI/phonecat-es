@@ -13,7 +13,9 @@ phonecatControladores.controller('ListaTelefonosCtrl', ['$scope', '$http',
     $scope.ordenProp = 'age';
   }]);
 
-phonecatControladores.controller('DetallesTelefonoCtrl', ['$scope', '$routeParams',
-  function($scope, $routeParams) {
-    $scope.idTelefono = $routeParams.idTelefono;
+phonecatControladores.controller('DetallesTelefonoCtrl', ['$scope', '$routeParams', '$http',
+  function($scope, $routeParams, $http) {
+    $http.get('phones/' + $routeParams.idTelefono + '.json').success(function(data) {
+      $scope.telefono = data;
+    });
   }]);
