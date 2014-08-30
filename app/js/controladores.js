@@ -4,20 +4,17 @@
 
 var phonecatControladores = angular.module('phonecatControladores', []);
 
-phonecatControladores.controller('ListaTelefonosCtrl', ['$scope', '$http',
-  function($scope, $http) {
-    $http.get('phones/phones.json').success(function(data) {
-      $scope.telefonos = data;
-    });
+phonecatControladores.controller('ListaTelefonosCtrl', ['$scope', 'Telefono',
+  function($scope, Telefono) {
+    $scope.telefonos = Telefono.query();
 
     $scope.ordenProp = 'age';
   }]);
 
-phonecatControladores.controller('DetallesTelefonoCtrl', ['$scope', '$routeParams', '$http',
-  function($scope, $routeParams, $http) {
-    $http.get('phones/' + $routeParams.idTelefono + '.json').success(function(data) {
-      $scope.telefono = data;
-      $scope.urlImagenPrincipal = data.images[0];
+phonecatControladores.controller('DetallesTelefonoCtrl', ['$scope', '$routeParams', 'Telefono',
+  function($scope, $routeParams, Telefono) {
+    $scope.telefono = Telefono.get({idTelefono: $routeParams.idTelefono}, function(telefono) {
+      $scope.urlImagenPrincipal = telefono.images[0];
     });
 
     $scope.setImagen = function(urlImagen) {
