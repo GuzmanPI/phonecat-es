@@ -14,7 +14,7 @@ El tutorial completo lo puedes encontrar en http://docs.angularjs.org/tutorial.
 
 ### Git
 
-- Un buen lugar para aprender cono A good place to learn about instalar y configurar git es [aquí][git-github]
+- Un buen lugar para aprender como instalar y configurar git es [aquí][git-github]
 - Git [inicio][git-home] (descarga, documentación)
 
 ### Node.js y Herramientas
