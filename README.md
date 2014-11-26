@@ -1,4 +1,4 @@
-# AngularJS Tutorial de Aplicación Catálogo de Teléfonos (Phonecat)
+# AngularJS - Tutorial de Aplicación Catálogo de Teléfonos (Phonecat)
 
 ## Información general
 
