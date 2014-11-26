@@ -1,6 +1,6 @@
 {
-  "name": "angular-phonecat",
-  "description": "A starter project for AngularJS",
+  "name": "phonecat-es",
+  "description": "Tutorial oficial de AngularJS (Phonecat) en español",
   "version": "0.0.0",
   "homepage": "https://github.com/angular/angular-phonecat",
   "license": "MIT",
