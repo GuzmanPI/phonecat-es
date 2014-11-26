@@ -242,7 +242,9 @@ Require un servidor web que sirva la aplicación. Vee Correr la aplicación dura
 
 ## Contacto
 
-Para más información acerca de AngularJS por favor visite http://angularjs.org/
+Para más información acerca de esta aplicación, por favor manda un correo a: angularjslatino@gmail.com
+
+Para más información acerca de AngularJS, por favor visite: http://angularjs.org/
 
 [7 Zip]: http://www.7-zip.org/
 [angular-seed]: https://github.com/angular/angular-seed
