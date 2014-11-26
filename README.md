@@ -4,7 +4,7 @@
 
 Esta aplicación lleva al desarrollador a través del proceso de construir una aplicación-web utilizando
 angular. La aplicación está inspirada en **Google Phone Gallery**, la cual ya no 
-existes. Aquí está una referencia histórica: [Google Phone Gallery on WayBack](http://web.archive.org/web/20131215082038/http://www.android.com/devices/).
+existes. Aquí está una referencia histórica: [Google Phone Gallery en WayBack](http://web.archive.org/web/20131215082038/http://www.android.com/devices/).
 
 Cada commit etiquetado es una lección separada que enseña un solo aspecto de angular.
 
