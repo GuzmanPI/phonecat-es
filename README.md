@@ -2,9 +2,9 @@
 
 ## Información general
 
-Esta aplicación lleva al desarrollador a través del proceso de construir una aplicación-web utilizando
-angular. La aplicación está inspirada en **Google Phone Gallery**, la cual ya no 
-existes. Aquí está una referencia histórica: [Google Phone Gallery en WayBack](http://web.archive.org/web/20131215082038/http://www.android.com/devices/).
+Esta aplicación lleva al desarrollador a través del proceso de construir una aplicación web utilizando
+Angular. La aplicación está inspirada en **Google Phone Gallery**, la cual ya no 
+existes, pero aquí hay una referencia histórica: [Google Phone Gallery en WayBack](http://web.archive.org/web/20131215082038/http://www.android.com/devices/).
 
 Cada commit etiquetado es una lección separada que enseña un solo aspecto de angular.
 
@@ -33,7 +33,7 @@ El tutorial completo lo puedes encontrar en http://docs.angularjs.org/tutorial.
 
 ## Commits / Tutorial Outline
 
-Puedes hacer check out cualquier punto del tutorila usando
+Puedes hacer check out a cualquier punto del tutorila usando
     git checkout paso-?
 
 Para ver los cambios entre dos lecciones cualquiera usa el comando git diff.
